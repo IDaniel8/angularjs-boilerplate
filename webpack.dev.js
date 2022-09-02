@@ -6,7 +6,7 @@ const config = require("./webpack.config.js");
 config.mode = "development";
 config.devtool = "eval";
 config.output = {
-  path: path.join(__dirname, "/dist"),
+  path: path.resolve(__dirname, "./dist"),
   filename: "[name].bundle.js",
   publicPath: "/",
 };

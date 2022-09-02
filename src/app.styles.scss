@@ -1,0 +1,7 @@
+.app-component {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  height: 100vh;
+  padding: 10px;
+  column-gap: 10px;
+}

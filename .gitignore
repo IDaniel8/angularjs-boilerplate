@@ -29,3 +29,8 @@ yarn-error.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Server mocks files
+/server_mock/dist
+/server_mock/node_modules
+/server_mock/src/files

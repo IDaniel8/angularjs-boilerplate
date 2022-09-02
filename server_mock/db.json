@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "michael.lawson@reqres.in",
+      "first_name": "Michael",
+      "last_name": "Lawson",
+      "avatar": "https://reqres.in/img/faces/7-image.jpg"
+    },
+    {
+      "id": 2,
+      "email": "lindsay.ferguson@reqres.in",
+      "first_name": "Lindsay",
+      "last_name": "Ferguson",
+      "avatar": "https://reqres.in/img/faces/8-image.jpg"
+    },
+    {
+      "id": 3,
+      "email": "tobias.funke@reqres.in",
+      "first_name": "Tobias",
+      "last_name": "Funke",
+      "avatar": "https://reqres.in/img/faces/9-image.jpg"
+    },
+    {
+      "id": 4,
+      "email": "byron.fields@reqres.in",
+      "first_name": "Byron",
+      "last_name": "Fields",
+      "avatar": "https://reqres.in/img/faces/10-image.jpg"
+    },
+    {
+      "id": 5,
+      "email": "george.edwards@reqres.in",
+      "first_name": "George",
+      "last_name": "Edwards",
+      "avatar": "https://reqres.in/img/faces/11-image.jpg"
+    },
+    {
+      "id": 6,
+      "email": "rachel.howell@reqres.in",
+      "first_name": "Rachel",
+      "last_name": "Howell",
+      "avatar": "https://reqres.in/img/faces/12-image.jpg"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "description": "Angular Tutorial For Beginners - Build Your First App - Hello World Step By Step",
+      "duration": "4:17",
+      "seqNo": 1,
+      "courseId": 5
+    },
+    {
+      "id": 2,
+      "description": "Building Your First  Component - Component Composition",
+      "duration": "2:07",
+      "seqNo": 2,
+      "courseId": 5
+    },
+    {
+      "id": 3,
+      "description": "Component @Input - How To Pass Input Data To an  Component",
+      "duration": "2:33",
+      "seqNo": 3,
+      "courseId": 5
+    },
+    {
+      "id": 4,
+      "description": " Component Events - Using @Output to create custom events",
+      "duration": "4:44",
+      "seqNo": 4,
+      "courseId": 5
+    },
+    {
+      "id": 5,
+      "description": " Component Templates - Inline Vs External",
+      "duration": "2:55",
+      "seqNo": 5,
+      "courseId": 5
+    },
+    {
+      "id": 6,
+      "description": "Styling  Components - Learn About Component Style Isolation",
+      "duration": "3:27",
+      "seqNo": 6,
+      "courseId": 5
+    },
+    {
+      "id": 7,
+      "description": " Component Interaction - Extended Components Example",
+      "duration": "9:22",
+      "seqNo": 7,
+      "courseId": 5
+    },
+    {
+      "id": 8,
+      "description": " Components Tutorial For Beginners - Components Exercise !",
+      "duration": "1:26",
+      "seqNo": 8,
+      "courseId": 5
+    },
+    {
+      "id": 9,
+      "description": " Components Tutorial For Beginners - Components Exercise Solution Inside",
+      "duration": "2:08",
+      "seqNo": 9,
+      "courseId": 5
+    },
+    {
+      "id": 10,
+      "description": " Directives - Inputs, Output Event Emitters and How To Export Template References",
+      "duration": "4:01",
+      "seqNo": 10,
+      "courseId": 5
+    }
+  ]
+}

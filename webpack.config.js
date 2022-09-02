@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /** @type {webpack.Configuration} */
 module.exports = {
-  entry: path.join(__dirname, "/src/app.module.js"),
-  output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "[name].bundle.js",
-    publicPath: "/",
+  entry: path.resolve(__dirname, "./src/app.module.js"),
+  resolve: {
+    alias: {
+      "@images": path.resolve(__dirname, "./src/assets/images"),
+    },
+    extensions: ["*", ".js"],
   },
   module: {
     rules: [
@@ -19,6 +20,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+            plugins: ["angularjs-annotate"],
           },
         },
       },
@@ -34,14 +36,14 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name]-[hash][ext]",
+          filename: "assets/images/[name]-[hash].[ext]",
         },
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
         type: "asset/resource",
         generator: {
-          filename: "assets/fonts/[name]-[hash][ext]",
+          filename: "assets/fonts/[name]-[hash].[ext]",
         },
       },
       {
@@ -54,7 +56,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "/src/public/index.html"),
+      template: path.resolve(__dirname, "./src/index.html"),
       inject: "body",
     }),
   ],
