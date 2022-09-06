@@ -1,7 +1,18 @@
 export class SidebarController {
-  constructor() {}
+  active = null;
+  rootScope = null;
 
-  $onInit() {}
+  constructor($rootScope) {
+    "ngInject";
+
+    this.rootScope = $rootScope;
+  }
+
+  $onInit() {
+    this.rootScope.$on("$stateChangeSuccess", (event, toState) => {
+      this.active = toState.name;
+    });
+  }
   $doCheck() {}
   $onChanges(onChangesObj) {}
   $onDestroy() {}

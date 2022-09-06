@@ -61,6 +61,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    historyApiFallback: true,
     hot: true,
     liveReload: true,
     static: "./",

@@ -1,0 +1,9 @@
+<div>Home Component</div>
+<br />
+<hr />
+<br />
+<div ng-show="vm.result > 0">
+  <a ui-sref="calc">Back</a>
+  <div>Calculated result = {{ vm.result }}</div>
+</div>
+<div ng-show="vm.result === 0">No calculations to show...</div>

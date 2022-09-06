@@ -1,5 +1,8 @@
 <div class="sidebar-component">
-  <div class="brand">
+  <a ui-sref="home" class="brand">
     <img ui-image="angular-logo.png" />
+  </a>
+  <div class="route-link" ng-class="{'active': vm.active === 'calc'}">
+    <a ui-sref="calc">Calculator</a>
   </div>
 </div>

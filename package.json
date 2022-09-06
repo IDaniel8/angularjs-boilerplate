@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./dist && webpack --config ./webpack.prod.js",
     "start": "webpack-dev-server --config ./webpack.dev.js",
-    "start:prod": "node src/server/index.js",
+    "start:prod": "node server/index.js",
     "start:mocks": "cd server_mock && npm run start"
   },
   "keywords": [],
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "1.5.9",
-    "angular-ui-grid": "^4.11.1",
+    "angular-ui-grid": "^4.1.0",
     "angular-ui-router": "^0.2.15",
     "lodash": "^4.17.21"
   },

@@ -1,13 +1,8 @@
 // import { IController } from "angular";
-import image from "@images/angular-logo.png";
 
 export class AppController {
-  title = "Welcome to angular APP";
-
-  constructor($rootScope) {
+  constructor() {
     "ngInject";
-
-    this.title = $rootScope.message;
   }
 
   $onInit() {}

@@ -4,7 +4,7 @@ const path = require("path");
 
 const PORT = 3000;
 connect()
-  .use(serveStatic(path.join(__dirname, "../../dist")))
+  .use(serveStatic(path.resolve(__dirname, "./dist")))
   .listen(PORT, function () {
     console.log("Server running on 'http://127.0.0.1:" + PORT + "'");
   });
