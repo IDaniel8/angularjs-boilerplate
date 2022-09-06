@@ -1,10 +1,10 @@
-import {
-  delayReqServerMiddleware,
-  newEntryServerMiddleware,
-} from "./middlewares/server";
-
 import jsonServer from "json-server";
+import { calcCustomRoute } from "./routes-custom/calc";
 import { lessonCustomRoute } from "./routes-custom/lessons";
+import {
+  newEntryServerMiddleware,
+  delayReqServerMiddleware,
+} from "./middlewares/server";
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
@@ -21,6 +21,7 @@ server.use(
 server.use(delayReqServerMiddleware(1000));
 server.use(newEntryServerMiddleware);
 lessonCustomRoute(server, router);
+calcCustomRoute(server, router);
 server.use(router);
 
 export function runServer({ PORT }) {

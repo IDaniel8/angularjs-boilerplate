@@ -1,7 +1,6 @@
-import "./calc.styles.scss";
-
-import { CalcController } from "./calc.controller";
 import CalcTemplate from "./calc.template.html";
+import { CalcController } from "./calc.controller";
+import "./calc.styles.scss";
 
 export const CalcComponent = {
   bindings: {},

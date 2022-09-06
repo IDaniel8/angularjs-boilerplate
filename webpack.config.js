@@ -8,6 +8,11 @@ module.exports = {
   resolve: {
     alias: {
       "@images": path.resolve(__dirname, "./src/assets/images"),
+      "@directives": path.resolve(__dirname, "./src/directives"),
+      "@modules": path.resolve(__dirname, "./src/modules"),
+      "@services": path.resolve(__dirname, "./src/services"),
+      "@shared": path.resolve(__dirname, "./src/shared"),
+      "@styles": path.resolve(__dirname, "./src/styles"),
     },
     extensions: ["*", ".js"],
   },

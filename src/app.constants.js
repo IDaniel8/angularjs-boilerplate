@@ -1,0 +1,5 @@
+const constants = {
+  API_URL: "http://localhost:3000",
+};
+
+export default Object.freeze(constants);

@@ -1,7 +1,6 @@
-import "./sidebar.styles.scss";
-
-import { SidebarController } from "./sidebar.controller";
 import SidebarTemplate from "./sidebar.template.html";
+import { SidebarController } from "./sidebar.controller";
+import "./sidebar.styles.scss";
 
 export const SidebarComponent = {
   bindings: {},

@@ -1,17 +1,26 @@
 export class HomeController {
-  a = 0;
-  b = 0;
-  result = 0;
+  loading = false;
 
-  constructor($stateParams) {
+  constructor($rootScope, calcService) {
     "ngInject";
 
-    this.a = $stateParams.a ?? 0;
-    this.b = $stateParams.b ?? 0;
+    this.routeState = $rootScope.routeState;
+    this.calcService = calcService;
+
+    this.a = $rootScope.routeState.params.a ?? 0;
+    this.b = $rootScope.routeState.params.b ?? 0;
+  }
+
+  getAddResult() {
+    this.loading = true;
+    this.calcService.$add(this.a, this.b).then((res) => {
+      this.result = res.data.result;
+      this.loading = false;
+    });
   }
 
   $onInit() {
-    this.result = Number(this.a) + Number(this.b);
+    this.getAddResult();
   }
   $doCheck() {}
   $onChanges(onChangesObj) {}

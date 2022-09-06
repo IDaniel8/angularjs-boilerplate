@@ -1,16 +1,11 @@
 export class CalcController {
-  routeState = null;
-  a = null;
-  b = null;
-
-  constructor($state) {
+  constructor($rootScope) {
     "ngInject";
 
-    this.routeState = $state;
+    this.routeState = $rootScope.routeState;
   }
 
   doAdd() {
-    console.log(this.a, this.b);
     this.routeState.go("home", {
       a: this.a,
       b: this.b,

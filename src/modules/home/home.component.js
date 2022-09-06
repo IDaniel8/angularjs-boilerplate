@@ -1,7 +1,6 @@
-import "./home.styles.scss";
-
-import { HomeController } from "./home.controller";
 import HomeTemplate from "./home.template.html";
+import { HomeController } from "./home.controller";
+import "./home.styles.scss";
 
 export const HomeComponent = {
   bindings: {},
