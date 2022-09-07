@@ -3,15 +3,12 @@
     <span class="text-alert">{{ vm.error }}</span>
   </div>
   <div ng-hide="vm.error">
-    <div ng-show="vm.loading">
-      <span class="text-alert">Loading...</span>
-    </div>
-    <div ng-hide="vm.loading">
+    <shared.loading>
       <div ng-show="vm.result > 0">
         <a ui-sref="calc">Back</a>
         <div>Calculated result = {{ vm.result }}</div>
       </div>
       <div ng-show="vm.result === 0">No calculations to show...</div>
-    </div>
+    </shared.loading>
   </div>
 </div>

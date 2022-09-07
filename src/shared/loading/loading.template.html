@@ -1,0 +1,8 @@
+<div class="loading-component">
+  <div class="text-alert" ng-show="vm.loadingService.$getLoadingState()">
+    Loading...
+  </div>
+  <div ng-hide="vm.loadingService.$getLoadingState()">
+    <ng-transclude></ng-transclude>
+  </div>
+</div>

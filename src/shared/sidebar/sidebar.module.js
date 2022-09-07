@@ -1,5 +1,5 @@
-import { SidebarComponent } from "./sidebar.component";
 import angular from "angular";
+import { SidebarComponent } from "./sidebar.component";
 
 // prettier-ignore
 export const SidebarModule = angular
