@@ -3,7 +3,7 @@
     <span class="text-alert">{{ vm.error }}</span>
   </div>
   <div ng-hide="vm.error">
-    <shared.loading>
+    <shared.loading isloading="vm.resultLoadingService.$getLoadingState()">
       <div ng-show="vm.result > 0">
         <a ui-sref="calc">Back</a>
         <div>Calculated result = {{ vm.result }}</div>

@@ -1,20 +1,20 @@
 export class ResultController {
   error = "";
 
-  constructor($rootScope, calcService, loadingService) {
+  constructor($rootScope, resultCalcService, resultLoadingService) {
     "ngInject";
 
     this.routeState = $rootScope.routeState;
-    this.calcService = calcService;
-    this.loadingService = loadingService;
+    this.resultCalcService = resultCalcService;
+    this.resultLoadingService = resultLoadingService;
 
     this.a = $rootScope.routeState.params.a ?? 0;
     this.b = $rootScope.routeState.params.b ?? 0;
   }
 
   getAddResult() {
-    this.loadingService.$setLoadingState(true);
-    this.calcService
+    this.resultLoadingService.$setLoadingState(true);
+    this.resultCalcService
       .$add(this.a, this.b)
       .then((res) => {
         this.result = res.data.result;
@@ -23,7 +23,7 @@ export class ResultController {
         this.error = "oops an error has ocurred...";
       })
       .finally(() => {
-        this.loadingService.$setLoadingState(false);
+        this.resultLoadingService.$setLoadingState(false);
       });
   }
 

@@ -1,4 +1,5 @@
 import angular from "angular";
+import { CalcService } from "@services/calc.service";
 import { LoadingService } from "@services/loading.service";
 import { ResultComponent } from "./result.component";
 
@@ -6,6 +7,7 @@ import { ResultComponent } from "./result.component";
 export const ResultModule = angular
   .module("app.calcresult", [])
 
-  .service("loadingService", LoadingService)
+  .service("resultCalcService", CalcService)
+  .service("resultLoadingService", LoadingService)
 
   .component("app.calcresult", ResultComponent);

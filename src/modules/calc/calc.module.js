@@ -1,11 +1,11 @@
 import angular from "angular";
 import { CalcComponent } from "./calc.component";
-
 import { ResultModule } from "./result/result.module";
 
 // prettier-ignore
 export const CalcModule = angular
   .module("app.calc", [ResultModule.name])
+
   .config(($stateProvider) => {
     "ngInject";
 
@@ -15,4 +15,5 @@ export const CalcModule = angular
         template: "<app.calcresult></app.calcresult>",
       })
   })
+
   .component("app.calc", CalcComponent);

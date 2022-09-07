@@ -4,7 +4,9 @@ import "./loading.styles.scss";
 
 export const LoadingComponent = {
   transclude: true,
-  bindings: {},
+  bindings: {
+    isloading: "=",
+  },
   template: LoadingTemplate,
   controller: LoadingController,
   controllerAs: "vm",

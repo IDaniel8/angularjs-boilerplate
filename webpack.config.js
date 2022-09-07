@@ -9,6 +9,7 @@ module.exports = {
     alias: {
       "@images": path.resolve(__dirname, "./src/assets/images"),
       "@directives": path.resolve(__dirname, "./src/directives"),
+      "@factories": path.resolve(__dirname, "./src/factory"),
       "@modules": path.resolve(__dirname, "./src/modules"),
       "@services": path.resolve(__dirname, "./src/services"),
       "@shared": path.resolve(__dirname, "./src/shared"),

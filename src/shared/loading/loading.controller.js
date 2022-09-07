@@ -1,9 +1,8 @@
 export class LoadingController {
-  constructor($rootScope, loadingService) {
+  constructor($rootScope) {
     "ngInject";
 
     this.rootScope = $rootScope;
-    this.loadingService = loadingService;
   }
 
   $onInit() {}

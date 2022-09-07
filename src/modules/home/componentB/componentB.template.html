@@ -1,0 +1,8 @@
+<div>
+  <div>Component B</div>
+  <shared.loading isloading="vm.componentBLoadingService.$getLoadingState()">
+    <span>COMPONENT B LOADED</span>
+  </shared.loading>
+  <button ng-click="vm.setLoading(true)">load</button>
+  <button ng-click="vm.setLoading(false)">notload</button>
+</div>
