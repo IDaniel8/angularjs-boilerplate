@@ -6,7 +6,7 @@ export class CalcController {
   }
 
   doAdd() {
-    this.routeState.go("home", {
+    this.routeState.go("calc.result", {
       a: this.a,
       b: this.b,
     });

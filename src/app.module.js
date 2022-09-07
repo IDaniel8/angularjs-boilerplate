@@ -23,7 +23,7 @@ angular
     $locationProvider.html5Mode(true);
     $stateProvider
       .state("home", {
-        url: "/?a&b",
+        url: "/",
         template: "<app.home></app.home>",
       })
       .state("calc", {
