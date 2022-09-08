@@ -1,12 +1,12 @@
 export class ResultController {
   error = "";
 
-  constructor($rootScope, resultCalcService, resultLoadingService) {
+  constructor($rootScope, loadingFactory, calcService) {
     "ngInject";
 
     this.routeState = $rootScope.routeState;
-    this.resultCalcService = resultCalcService;
-    this.resultLoadingService = resultLoadingService;
+    this.resultCalcService = calcService;
+    this.resultLoadingService = loadingFactory.getInstance();
 
     this.a = $rootScope.routeState.params.a ?? 0;
     this.b = $rootScope.routeState.params.b ?? 0;

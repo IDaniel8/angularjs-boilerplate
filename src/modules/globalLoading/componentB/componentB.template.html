@@ -1,0 +1,22 @@
+<div>
+  <h2>Component B</h2>
+  <div>
+    <h4>Global Loading</h4>
+    <shared.loading isloading="vm.globalLoadingService.$getLoadingState()">
+      <span>COMPONENT B LOADED WITH GLOBAL SERVICE</span>
+    </shared.loading>
+    <button ng-click="vm.setGlobalLoading(true)">load</button>
+    <button ng-click="vm.setGlobalLoading(false)">notload</button>
+  </div>
+  <div>
+    <h4>Local Loading</h4>
+    <shared.loading isloading="vm.localLoadingService.$getLoadingState()">
+      <span>COMPONENT B LOADED WITH LOCAL SERVICE</span>
+    </shared.loading>
+    <button ng-click="vm.setLocalLoading(true)">load</button>
+    <button ng-click="vm.setLocalLoading(false)">notload</button>
+  </div>
+</div>
+<br />
+<hr />
+<br />

@@ -3,7 +3,10 @@ import constants from "./app.constants";
 import uiRouter from "angular-ui-router";
 import { AppComponent } from "./app.component";
 import { CalcModule } from "@modules/calc/calc.module";
+import { CalcService } from "@services/calc.service";
+import { GlobalLoadingModule } from "@modules/globalLoading/globalLoading.module";
 import { HomeModule } from "@modules/home/home.module";
+import { LoadingFactory } from "@factories/loading.factory";
 import { LoadingService } from "@services/loading.service";
 import { SharedModule } from "@shared/shared.module";
 import { uiImage } from "@directives/ui-image.directive";
@@ -13,6 +16,7 @@ angular
   .module("app", [
     uiRouter,
     SharedModule.name,
+    GlobalLoadingModule.name,
     CalcModule.name,
     HomeModule.name,
   ])
@@ -25,6 +29,10 @@ angular
       .state("home", {
         url: "/",
         template: "<app.home></app.home>",
+      })
+      .state("globalLoading", {
+        url: "/global-loading",
+        template: "<app.global.loading></app.global.loading>",
       })
       .state("calc", {
         url: "/calc",
@@ -45,7 +53,10 @@ angular
 
   .constant("constants", constants)
 
+  .service("loadingFactory", LoadingFactory)
+
   .service("globalLoadingService", LoadingService)
+  .service("calcService", CalcService)
 
   .directive("uiImage", uiImage)
 
