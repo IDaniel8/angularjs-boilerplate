@@ -20,6 +20,11 @@ const states = [
     template: "<app.movies></app.movies>",
   },
   {
+    name: "lessons",
+    url: "/lessons",
+    template: "<app.lessons></app.lessons>",
+  },
+  {
     name: "otherwise",
     url: "*path",
     template: "<strong>no route available</strong>",

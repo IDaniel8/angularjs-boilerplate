@@ -7,6 +7,8 @@ import { CalcModule } from "@modules/calc/calc.module";
 import { CalcService } from "@services/calc.service";
 import { GlobalLoadingModule } from "@modules/globalLoading/globalLoading.module";
 import { HomeModule } from "@modules/home/home.module";
+import { LessonsModule } from "@modules/lessons/lessons.module";
+import { LessonsService } from "@services/lessons.service";
 import { LoadingFactory } from "@factories/loading.factory";
 import { LoadingService } from "@services/loading.service";
 import { MoviesModule } from "@modules/movies/movies.module";
@@ -22,6 +24,7 @@ angular
     GlobalLoadingModule.name,
     CalcModule.name,
     MoviesModule.name,
+    LessonsModule.name,
     HomeModule.name,
   ])
 
@@ -46,6 +49,7 @@ angular
   .service("globalLoadingService", LoadingService)
   .service("calcService", CalcService)
   .service("moviesService", MoviesService)
+  .service("lessonsService", LessonsService)
 
   .directive("uiImage", uiImage)
 
