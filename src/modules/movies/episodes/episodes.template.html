@@ -1,0 +1,12 @@
+<div class="movies-episodes-component">
+  <h4>List of Movie Episodes</h4>
+  <div class="list-group">
+    <li
+      ng-repeat="s in vm.episodes"
+      class="list-group-item"
+      ng-click="vm.changeID(s)"
+    >
+      {{ s.name }}
+    </li>
+  </div>
+</div>

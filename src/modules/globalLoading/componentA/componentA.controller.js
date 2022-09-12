@@ -1,8 +1,7 @@
 export class ComponentAController {
-  constructor($rootScope, globalLoadingService, loadingFactory) {
+  constructor(globalLoadingService, loadingFactory) {
     "ngInject";
 
-    this.routeState = $rootScope.routeState;
     this.globalLoadingService = globalLoadingService;
     this.localLoadingService = loadingFactory.getInstance();
   }

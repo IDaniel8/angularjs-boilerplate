@@ -1,0 +1,9 @@
+<div class="movies-component">
+  <h2>Info: {{ vm.appName }} for: {{ vm.seriesName }}</h2>
+  <shared.loading isloading="vm.globalLoadingService.$getLoadingState()">
+    <div class="grid">
+      <app.movies.series></app.movies.series>
+      <app.movies.episodes></app.movies.episodes>
+    </div>
+  </shared.loading>
+</div>

@@ -12,7 +12,7 @@ export const CalcModule = angular
     $stateProvider
       .state("calc.result", {
         url: "/result?a&b",
-        template: "<app.calcresult></app.calcresult>",
+        template: "<app.calc.result></app.calc.result>",
       })
   })
 

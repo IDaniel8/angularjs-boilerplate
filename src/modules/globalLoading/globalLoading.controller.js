@@ -1,8 +1,6 @@
 export class GlobalLoadingController {
-  constructor($rootScope) {
+  constructor() {
     "ngInject";
-
-    this.routeState = $rootScope.routeState;
   }
 
   $onInit() {}

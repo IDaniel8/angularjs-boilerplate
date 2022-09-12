@@ -1,0 +1,32 @@
+.movies-series-component {
+  h4 {
+    margin-bottom: 12px;
+  }
+
+  .list-group {
+    width: fit-content;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+
+  .list-group-item {
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    padding: 6px 14px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid;
+    }
+
+    &:hover {
+      background: red;
+      color: white;
+    }
+
+    &.active {
+      background: red;
+      color: white;
+    }
+  }
+}

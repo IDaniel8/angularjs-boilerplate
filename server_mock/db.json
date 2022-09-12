@@ -114,5 +114,86 @@
       "seqNo": 10,
       "courseId": 5
     }
+  ],
+  "series": [
+    {
+      "id": 1,
+      "name": "Star Wars"
+    },
+    {
+      "id": 2,
+      "name": "Harry Potter"
+    },
+    {
+      "id": 3,
+      "name": "Lord of the Rings"
+    }
+  ],
+  "episodes": [
+    {
+      "id": 1,
+      "name": "The Phantom Menace",
+      "refId": 1
+    },
+    {
+      "id": 2,
+      "name": "Attack of the Clones",
+      "refId": 1
+    },
+    {
+      "id": 3,
+      "name": "Revenge of the Sith",
+      "refId": 1
+    },
+    {
+      "id": 4,
+      "name": "A New Hope",
+      "refId": 1
+    },
+    {
+      "id": 5,
+      "name": "Empire Strikes Back",
+      "refId": 1
+    },
+    {
+      "id": 6,
+      "name": "Philosophal Stone",
+      "refId": 2
+    },
+    {
+      "id": 7,
+      "name": "Chamber of Secrets",
+      "refId": 2
+    },
+    {
+      "id": 8,
+      "name": "Goblet of Fire",
+      "refId": 2
+    },
+    {
+      "id": 9,
+      "name": "The Fellowship of the Ring",
+      "refId": 3
+    },
+    {
+      "id": 10,
+      "name": "The Two Towers",
+      "refId": 3
+    },
+    {
+      "id": 11,
+      "name": "The Return of the King",
+      "refId": 3
+    },
+    {
+      "id": 12,
+      "name": "The Hobbit",
+      "refId": 3
+    },
+    {
+      "id": 13,
+      "name": "The Hobbit An Unexpected Journey",
+      "refId": 3
+    }
   ]
 }

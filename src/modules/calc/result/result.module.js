@@ -3,6 +3,6 @@ import { ResultComponent } from "./result.component";
 
 // prettier-ignore
 export const ResultModule = angular
-  .module("app.calcresult", [])
+  .module("app.calc.result", [])
 
-  .component("app.calcresult", ResultComponent);
+  .component("app.calc.result", ResultComponent);

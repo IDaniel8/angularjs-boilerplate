@@ -1,0 +1,13 @@
+<div class="movies-series-component">
+  <h4>List of Movie Series</h4>
+  <div class="list-group">
+    <li
+      ng-repeat="s in vm.series"
+      class="list-group-item"
+      ng-class="{ 'active': vm.selectedSerieId == s.id }"
+      ng-click="vm.changeID(s)"
+    >
+      {{ s.name }}
+    </li>
+  </div>
+</div>
