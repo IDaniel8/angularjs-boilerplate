@@ -7,10 +7,11 @@ module.exports = {
   entry: path.resolve(__dirname, "./src/app.module.js"),
   resolve: {
     alias: {
+      "@packages": path.resolve(__dirname, "./node_modules"),
       "@images": path.resolve(__dirname, "./src/assets/images"),
       "@directives": path.resolve(__dirname, "./src/directives"),
       "@factories": path.resolve(__dirname, "./src/factory"),
-      "@modules": path.resolve(__dirname, "./src/modules"),
+      "@views": path.resolve(__dirname, "./src/views"),
       "@services": path.resolve(__dirname, "./src/services"),
       "@shared": path.resolve(__dirname, "./src/shared"),
       "@styles": path.resolve(__dirname, "./src/styles"),
