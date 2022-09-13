@@ -20,14 +20,13 @@ export function lessonCustomRoute(server, router) {
   const db = router.db;
 
   server.get("/lessons", (req, res) => {
-    const filter = req.query["filter"] ?? "";
-    const sortColumn = req.query["sortColumn"] ?? "seqNo";
-    const sortOrder = req.query["sortOrder"] ?? "asc";
-    const pageNumber = Number(req.query["pageNumber"] ?? "0");
-    const pageSize = Number(req.query["pageSize"] ?? "3");
+    let filter = req.query["filter"] ?? "";
+    let sortColumn = req.query["sortColumn"] ?? "seqNo";
+    let sortOrder = req.query["sortOrder"] ?? "asc";
+    let pageNumber = Number(req.query["pageNumber"] ?? "0");
+    let pageSize = Number(req.query["pageSize"] ?? "3");
 
-    const totalItems = db.get("lessons").size().value();
-    const totalPages = Math.ceil(totalItems / pageSize);
+    let totalItems = db.get("lessons").size().value();
 
     let payload = db.get("lessons").value();
 
@@ -35,7 +34,7 @@ export function lessonCustomRoute(server, router) {
       res.status(400).jsonp({ message: "bad request" });
     }
 
-    // Sorting
+    // Sorting Filter
     payload = payload.sort((a, b) => {
       if (sortOrder === "asc") {
         return sortCalc(a[sortColumn], b[sortColumn], typeof a[sortColumn]);
@@ -44,22 +43,25 @@ export function lessonCustomRoute(server, router) {
       return sortCalc(b[sortColumn], a[sortColumn], typeof a[sortColumn]);
     });
 
-    // Limit by page
-    const start = pageNumber * pageSize;
-    const end = start + pageSize;
-    payload = payload.slice(start, end);
-
+    // Search Filter
     if (filter) {
       payload = payload.filter((item) =>
         item.description.trim().toLowerCase().includes(filter.toLowerCase())
       );
+      pageNumber = 0;
+      totalItems = payload.length;
     }
+
+    // Size Filter
+    const start = pageNumber * pageSize;
+    const end = start + pageSize;
+    payload = payload.slice(start, end);
 
     res.status(200).jsonp({
       page: String(pageNumber + 1),
       pageSize: String(pageSize),
       total: String(totalItems),
-      totalPages: String(totalPages),
+      totalPages: String(Math.ceil(totalItems / pageSize)),
       payload: payload,
     });
   });

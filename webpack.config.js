@@ -15,6 +15,7 @@ module.exports = {
       "@services": path.resolve(__dirname, "./src/services"),
       "@shared": path.resolve(__dirname, "./src/shared"),
       "@styles": path.resolve(__dirname, "./src/styles"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
     extensions: ["*", ".js"],
   },
