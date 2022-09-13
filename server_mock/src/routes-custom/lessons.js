@@ -20,49 +20,69 @@ export function lessonCustomRoute(server, router) {
   const db = router.db;
 
   server.get("/lessons", (req, res) => {
-    let filter = req.query["filter"] ?? "";
-    let sortColumn = req.query["sortColumn"] ?? "seqNo";
-    let sortOrder = req.query["sortOrder"] ?? "asc";
-    let pageNumber = Number(req.query["pageNumber"] ?? "0");
-    let pageSize = Number(req.query["pageSize"] ?? "3");
+    const config = {
+      filter: req.query["filter"] ?? "",
+      filterColumn: req.query["filterColumn"] ?? "",
+      sortColumn: req.query["sortColumn"] ?? "",
+      sortOrder: req.query["sortOrder"] ?? "asc",
+      pageNumber: Number(req.query["pageNumber"] ?? "0"),
+      pageSize: Number(req.query["pageSize"] ?? "3"),
+      totalItems: db.get("lessons").size().value(),
+      payload: db.get("lessons").value(),
+    };
 
-    let totalItems = db.get("lessons").size().value();
-
-    let payload = db.get("lessons").value();
-
-    if (["description", "duration", "seqNo"].indexOf(sortColumn) === -1) {
-      res.status(400).jsonp({ message: "bad request" });
-    }
+    let isSort =
+      ["description", "duration", "seqNo"].indexOf(config.sortColumn) !== -1;
+    let isFilter =
+      ["description", "duration", "seqNo"].indexOf(config.filterColumn) !== -1;
 
     // Sorting Filter
-    payload = payload.sort((a, b) => {
-      if (sortOrder === "asc") {
-        return sortCalc(a[sortColumn], b[sortColumn], typeof a[sortColumn]);
-      }
+    if (isSort) {
+      config.payload = config.payload.sort((a, b) => {
+        if (config.sortOrder === "asc") {
+          return sortCalc(
+            a[config.sortColumn],
+            b[config.sortColumn],
+            typeof a[config.sortColumn]
+          );
+        }
 
-      return sortCalc(b[sortColumn], a[sortColumn], typeof a[sortColumn]);
-    });
+        return sortCalc(
+          b[config.sortColumn],
+          a[config.sortColumn],
+          typeof a[config.sortColumn]
+        );
+      });
+    }
 
     // Search Filter
-    if (filter) {
-      payload = payload.filter((item) =>
-        item.description.trim().toLowerCase().includes(filter.toLowerCase())
+    if (config.filter && isFilter) {
+      config.payload = config.payload.filter((item) =>
+        String(item[config.filterColumn])
+          .trim()
+          .toLowerCase()
+          .includes(config.filter.toLowerCase())
       );
-      pageNumber = 0;
-      totalItems = payload.length;
+      config.totalItems = config.payload.length;
     }
 
     // Size Filter
-    const start = pageNumber * pageSize;
-    const end = start + pageSize;
-    payload = payload.slice(start, end);
+    const start = config.pageNumber * config.pageSize;
+    const end = start + config.pageSize;
+    config.payload = config.payload.slice(start, end);
 
     res.status(200).jsonp({
-      page: String(pageNumber + 1),
-      pageSize: String(pageSize),
-      total: String(totalItems),
-      totalPages: String(Math.ceil(totalItems / pageSize)),
-      payload: payload,
+      filter: config.filter,
+      filterColumn: config.filterColumn,
+      sortColumn: config.sortColumn,
+      sortOrder: config.sortOrder,
+      pageNumber: String(config.pageNumber + 1),
+      pageSize: String(config.pageSize),
+      total: String(config.totalItems),
+      totalPages: String(
+        config.totalPages ?? Math.ceil(config.totalItems / config.pageSize)
+      ),
+      payload: config.payload,
     });
   });
 }

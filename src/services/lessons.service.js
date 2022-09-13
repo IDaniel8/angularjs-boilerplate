@@ -11,11 +11,12 @@ export class LessonsService {
 
   $getLessonsPaginate(paginate) {
     const paginationConfig = {
-      filter: paginate?.filter ?? "",
-      sortColumn: paginate?.filter ?? "seqNo",
-      sortOrder: paginate?.sortOrder ?? "asc",
-      pageNumber: Number(paginate?.pageNumber) || 0,
-      pageSize: Number(paginate?.pageSize) || 3,
+      filter: paginate?.filter,
+      filterColumn: paginate?.filterColumn,
+      sortColumn: paginate?.sortColumn,
+      sortOrder: paginate?.sortOrder,
+      pageNumber: paginate?.pageNumber,
+      pageSize: paginate?.pageSize,
     };
     return this.$http.get(`${this.constants.API_URL}/lessons`, {
       params: paginationConfig,
